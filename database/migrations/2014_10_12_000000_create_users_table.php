@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('Password');
             $table->string('Description')->nullable();
             $table->binary('Picture')->nullable();
-            $table->timestamp('updates_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
             $table->timestamp('created_at')->nullable();
         });
     }
