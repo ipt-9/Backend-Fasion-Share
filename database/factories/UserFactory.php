@@ -24,12 +24,12 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => Str::random(10),
-            'email' => Str::random(10).'@examle.com',
+            'name' => fake()->name(),
+            'email' => fake()->unique()->safeEmail(),
             //'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             //'remember_token' => Str::random(10),
-            'description'=>Str::random(100),
+            'description'=>fake()->text(200),
             'picture'=>'picture/img.png'
         ];
     }
@@ -38,5 +38,7 @@ class UserFactory extends Factory
      * Indicate that the model's email address should be unverified.
      */
     public function unverified(): static
-    {    }
+    {
+
+    }
 }
