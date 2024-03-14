@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('Email')->unique();
             $table->string('Password');
             $table->string('Description')->nullable();
-            $table->binary('ProfilePicture')->nullable();
+            $table->binary('Picture')->nullable();
         });
     }
 
