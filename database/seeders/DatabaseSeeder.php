@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Like_user;
 use App\Models\Post;
 use Database\Factories\Like_userFactory;
 use Illuminate\Database\Seeder;
@@ -19,11 +20,9 @@ class DatabaseSeeder extends Seeder
         User::factory()
             ->count(20)
             ->has(Post::factory()->count(4))
+            ->has(Like_user::factory()->count(4))
             ->create();
 
-        Like_userFactory::factory()
-            ->count(20)
 
-            ->create();
     }
 }
