@@ -23,5 +23,10 @@ class Post extends Model
     {
         return $this->hasMany(Link::class);
     }
+
+    public function like_users()
+    {
+        return $this->hasMany(Like_user::class);
+    }
 }
 
