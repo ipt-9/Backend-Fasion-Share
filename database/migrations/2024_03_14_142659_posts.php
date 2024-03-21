@@ -20,6 +20,8 @@ return new class extends Migration
             $table->date('date')->unique();
             $table->integer('likes')->default(0);
             $table->string('Image');
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->nullable();
         });
     }
 
