@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreignId('link_id')->nullable();
             $table->string('description');
-            $table->date('date')->unique();
+            $table->date('date');
             $table->integer('likes')->default(0);
             $table->string('Image');
             $table->timestamp('updated_at')->nullable();
