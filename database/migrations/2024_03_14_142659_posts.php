@@ -16,10 +16,10 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreignId('link_id');
             $table->foreignId('post_id');
-            $table->string('Description');
+            $table->string('description');
             $table->date('date')->unique();
             $table->integer('likes')->default(0);
-            $table->binary('Image');
+            $table->string('Image');
         });
     }
 
