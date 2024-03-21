@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 
 use Laravel\Sanctum\HasApiTokens;
@@ -13,13 +13,13 @@ class Like_user extends Model
 {
     use HasFactory;
 
-    public function users(): BelongsToMany
+    public function users(): HasMany
     {
-        return $this->belongsToMany(User::class);
+        return $this->hasMany(User::class);
     }
 
-    public function posts(): BelongsToMany
+    public function posts(): HasMany
     {
-        return $this->belongsToMany(Post::class);
+        return $this->hasMany(Post::class);
     }
 }

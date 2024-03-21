@@ -52,6 +52,6 @@ class User extends Authenticatable
 
     public function like_users()
     {
-        return $this->hasMany(Like_user::class);
+        return $this->belongsToMany(Like_user::class);
     }
 }
