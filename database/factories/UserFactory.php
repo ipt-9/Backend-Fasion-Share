@@ -30,8 +30,8 @@ class UserFactory extends Factory
             'password' => static::$password ??= Hash::make('password'),
             //'remember_token' => Str::random(10),
             'description'=>fake()->text(200),
-            'picture' => '/pictures/Image.jpeg',
-            //'autoPicture'=> fake()->image(storage_path('/pictures'), 300, 300, null, false)
+            'picture' => '/profilePictures/Image.jpeg',
+            //'autoPicture'=> fake()->image(storage_path('/profilePictures'), 300, 300, null, false)
         ];
     }
 
