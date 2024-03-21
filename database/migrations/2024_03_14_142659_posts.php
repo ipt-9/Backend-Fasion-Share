@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('link_id');
-            $table->foreignId('post_id');
+            $table->foreignId('link_id')->nullable();
             $table->string('description');
             $table->date('date')->unique();
             $table->integer('likes')->default(0);
