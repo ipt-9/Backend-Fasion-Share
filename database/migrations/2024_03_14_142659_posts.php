@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('description');
             $table->date('date');
             $table->integer('likes')->default(0);
-            $table->string('Image');
+            $table->string('image');
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('created_at')->nullable();
         });

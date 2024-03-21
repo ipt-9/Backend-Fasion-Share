@@ -31,6 +31,8 @@ class UserFactory extends Factory
             //'remember_token' => Str::random(10),
             'description'=>fake()->text(200),
             'picture' => '/profilePictures/Image.jpeg',
+
+
             //'autoPicture'=> fake()->image(storage_path('/profilePictures'), 300, 300, null, false)
         ];
     }

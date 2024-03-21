@@ -21,7 +21,8 @@ class PostFactory extends Factory
             'description' => fake()->text(150),
             'date'=>now(),
             'likes' => fake()-> numberBetween(35, 1000000),
-            'image'=> '/postPictures/Image.jpeg'
+            //'image'=> '/postPictures/Glazi.jpg',
+            'image'=> fake()->imageURL(360, 360, 'animals', true, 'cats')
         ];
     }
 }
