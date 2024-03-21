@@ -19,6 +19,7 @@ class PostFactory extends Factory
         return [
             //'user_id' => fake()->numberBetween(1,20),
             'description' => fake()->text(150),
+            'date'=>now(),
             'likes' => fake()-> numberBetween(35, 1000000),
             'image'=> '/postPictures/Image.jpeg'
         ];
