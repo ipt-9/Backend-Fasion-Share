@@ -17,7 +17,7 @@ class LinkFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->text(15),
+            'name' => fake()->unique()->text(15),
             'link' => 'google.com',
         ];
     }
