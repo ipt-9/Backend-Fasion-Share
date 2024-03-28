@@ -18,7 +18,7 @@ class PostController extends Controller
     }
 
     public function showUserPosts(int $id){
-        $posts = Post::where('user_id', '=', $id);
+        $posts = Post::where('user_id', '=', $id)->get();
         return ['data' => $posts];
     }
 
