@@ -29,6 +29,10 @@ Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth:sanc
 Route::get('/users',[UserController::class, 'showAll'] );
 
 Route::post('/users', [UserController::class, 'store']);
-Route::post('/posts', [PostController::class, 'store']);
 
+//posts
+Route::post('/posts', [PostController::class, 'store']);
+Route::get('/posts/{id}',[PostController::class, 'show'] );
+Route::get('/posts/{id}',[PostController::class, 'showAll'] );
+Route::get('/posts/user/{id}',[PostController::class, 'showUserPosts'] );
 

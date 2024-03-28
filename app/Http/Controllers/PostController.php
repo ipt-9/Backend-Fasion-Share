@@ -8,6 +8,22 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public function show(int $id){
+        $post = Post::find($id);
+        return ['data' => $post];
+    }
+    public function showAll(){
+        $posts = Post::all();
+        return ['data' => $posts];
+    }
+
+    public function showUserPosts(int $id){
+        $posts = Post::where('user_id', '=', $id);
+        return ['data' => $posts];
+    }
+
+
+
     public function store(Request $request)
     {
         // Validate the incoming request data
@@ -26,6 +42,6 @@ class PostController extends Controller
         $post->created_at = now();
         $post->save();
 
-        return response()->json(['message' => 'User created successfully'],201);
+        return response()->json(['message' => 'Post created successfully'],201);
     }
 }
