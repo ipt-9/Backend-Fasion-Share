@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tag_post', function (Blueprint $table) {
+        Schema::create('tag_posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('tag_id');
             $table->foreignId('post_id');
