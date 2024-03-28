@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Post;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 
 
@@ -22,6 +22,13 @@ class PostController extends Controller
         return ['data' => $posts];
     }
 
+    public function showLikedPosts(int $id){
+        $user = User::find($id);
+
+
+        $posts = User::find($id)->posts()->get();
+        return ['data' => $posts];
+    }
 
 
     public function store(Request $request)
