@@ -14,15 +14,6 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function tags()
-    {
-        return $this->hasMany(Tag::class);
-    }
-
-    public function links()
-    {
-        return $this->hasMany(Link::class);
-    }
 
     public function like_users()
     {
@@ -32,6 +23,11 @@ class Post extends Model
     public function bookmark_users()
     {
         return $this->belongsToMany(Like_user::class, "Bookmark_user");
+    }
+
+    public function tag_posts()
+    {
+        return $this->belongsToMany(Like_user::class, "Tag_post");
     }
 }
 

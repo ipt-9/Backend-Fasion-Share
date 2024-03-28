@@ -7,6 +7,7 @@ use App\Models\Bookmark_user;
 use App\Models\Like_user;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Models\Tag_post;
 use Database\Factories\Like_userFactory;
 use Illuminate\Database\Seeder;
 use App\Models\User;
@@ -34,6 +35,10 @@ class DatabaseSeeder extends Seeder
             ->create();
 
         Tag::factory()
+            ->count(20)
+            ->create();
+
+        Tag_post::factory()
             ->count(20)
             ->create();
 
