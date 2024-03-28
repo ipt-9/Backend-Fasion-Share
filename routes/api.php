@@ -22,9 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/users/{id}',[UserController::class, 'show'] );
+Route::post('/login',[LoginController::class, 'login'] );
+Route::get('/auth',[LoginController::class,'checkAuth'])->middleware('auth:sanctum');
+Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth:sanctum');
 
-Route::get("/hi", function (){
-    return "hi";
-});
+Route::post('users', [UserController::class, 'store']);
 
 //Route::post('/login',[LoginController::class, 'login'] );
