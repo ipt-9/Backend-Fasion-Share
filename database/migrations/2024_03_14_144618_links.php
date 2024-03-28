@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('Name')->unique();
             $table->string('link')->unique();
-
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->nullable();
         });
     }
 
