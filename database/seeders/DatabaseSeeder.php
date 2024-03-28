@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\Bookmark_user;
 use App\Models\Like_user;
 use App\Models\Post;
+use App\Models\Tag;
 use Database\Factories\Like_userFactory;
 use Illuminate\Database\Seeder;
 use App\Models\User;
@@ -31,5 +32,10 @@ class DatabaseSeeder extends Seeder
         Bookmark_user::factory()
             ->count(20)
             ->create();
+
+        Tag::factory()
+            ->count(20)
+            ->create();
+
     }
 }
