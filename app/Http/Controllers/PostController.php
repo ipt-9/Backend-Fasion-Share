@@ -24,12 +24,11 @@ class PostController extends Controller
 
     public function showLikedPosts(int $id){
         $user = User::find($id);
-        $posts = [];
-        foreach ($user->likes as $like) {
-            array_push( $posts['posts'], $like );
-        }
+       // foreach ($user->likes as $like) {
+        //    // ...
+        //}
 
-        //$posts = User::find($id)->likes()->get();
+        $posts = User::find($id)->like_users->get();
         return ['data' => $posts];
     }
 
