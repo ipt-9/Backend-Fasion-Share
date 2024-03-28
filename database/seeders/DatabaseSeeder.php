@@ -20,9 +20,11 @@ class DatabaseSeeder extends Seeder
         User::factory()
             ->count(20)
             ->has(Post::factory()->count(4))
-            ->has(Like_user::factory()->count(4))
+
             ->create();
 
-
+        Like_user::factory()
+            ->count(20)
+            ->create();
     }
 }
