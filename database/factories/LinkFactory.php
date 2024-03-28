@@ -18,7 +18,7 @@ class LinkFactory extends Factory
     {
         return [
             'name' => fake()->unique()->text(15),
-            'link' => 'google.com',
+            'link' => fake()->unique()->text(15),
         ];
     }
 }
