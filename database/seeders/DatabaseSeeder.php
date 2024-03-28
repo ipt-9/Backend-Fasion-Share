@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Bookmark_user;
 use App\Models\Like_user;
+use App\Models\Link;
+use App\Models\Link_post;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Models\Tag_post;
@@ -39,6 +41,14 @@ class DatabaseSeeder extends Seeder
             ->create();
 
         Tag_post::factory()
+            ->count(20)
+            ->create();
+
+        Link_post::factory()
+            ->count(20)
+            ->create();
+
+        Link::factory()
             ->count(20)
             ->create();
 
