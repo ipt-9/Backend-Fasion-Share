@@ -26,5 +26,9 @@ class DatabaseSeeder extends Seeder
         Like_user::factory()
             ->count(20)
             ->create();
+
+        Bookmark_user::factory()
+            ->count(20)
+            ->create();
     }
 }

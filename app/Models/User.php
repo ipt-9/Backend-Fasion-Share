@@ -54,4 +54,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Like_user::class, "Like_user");
     }
+
+    public function bookmark_users()
+    {
+        return $this->belongsToMany(Like_user::class, "Bookmark_user");
+    }
 }
