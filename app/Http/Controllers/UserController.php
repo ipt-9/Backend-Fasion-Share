@@ -13,6 +13,10 @@ class UserController extends Controller
         $user = User::find($id);
         return ['data' => $user];
     }
+    public function showAll(){
+        $user = User::all();
+        return ['data' => $user];
+    }
 
     public function store(Request $request)
     {
