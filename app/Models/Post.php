@@ -29,5 +29,10 @@ class Post extends Model
     {
         return $this->belongsToMany(Like_user::class, "Tag_post");
     }
+
+    public function link_posts()
+    {
+        return $this->belongsToMany(Like_user::class, "Link_post");
+    }
 }
 

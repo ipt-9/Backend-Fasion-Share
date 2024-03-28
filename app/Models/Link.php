@@ -9,8 +9,8 @@ class Link extends Model
 {
     use HasFactory;
 
-    public function posts()
+    public function link_posts()
     {
-        return $this->belongsToMany(Post::class);
+        return $this->belongsToMany(Like_user::class, "Link_post");
     }
 }
