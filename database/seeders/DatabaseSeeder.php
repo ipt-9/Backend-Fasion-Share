@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Bookmark_user;
 use App\Models\Like_user;
 use App\Models\Post;
 use Database\Factories\Like_userFactory;
