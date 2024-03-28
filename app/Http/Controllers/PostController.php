@@ -26,7 +26,7 @@ class PostController extends Controller
         $user = User::find($id);
 
 
-        $posts = User::find($id)->posts()->get();
+        $posts = User::find($id)->likes()->get();
         return ['data' => $posts];
     }
 
