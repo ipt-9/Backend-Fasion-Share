@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\LinkController;
+
 
 
 
@@ -43,4 +45,7 @@ Route::get('/posts/liked/{id}',[PostController::class, 'showLikedPosts'] );
 
 //tags
 Route::post('/tags', [TagController::class, 'store']);
+
+//links
+Route::post('/links', [LinkController::class, 'store']);
 
