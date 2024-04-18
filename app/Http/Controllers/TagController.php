@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
@@ -23,4 +24,8 @@ class TagController extends Controller
 
         return response()->json(['message' => 'tag created successfully'],201);
     }
+
+    public function showPostsWithTag(){
+
+            }
 }

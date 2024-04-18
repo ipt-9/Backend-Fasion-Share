@@ -33,7 +33,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth:sanc
 
 //users
 Route::get('/users/{id}',[UserController::class, 'show'] );
-Route::get('/getusers',[UserController::class, 'showAll'] );
+Route::get('/getUsers',[UserController::class, 'showAll'] );
 Route::post('/users', [UserController::class, 'store']);
 
 //posts
@@ -50,4 +50,8 @@ Route::post('/tags', [TagController::class, 'store']);
 
 //links
 Route::post('/links', [LinkController::class, 'store']);
+
+//likes
+Route::get('/posts/tags/{tag}',[TagController::class, 'showPostsWithTag'] );
+
 
