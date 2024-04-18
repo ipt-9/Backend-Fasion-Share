@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TagController;
+
 
 
 /*
@@ -36,6 +38,9 @@ Route::get('/posts/{id}',[PostController::class, 'show'] );
 Route::get('/posts',[PostController::class, 'showAll'] );
 Route::get('/posts/user/{id}',[PostController::class, 'showUserPosts'] );
 
-//tags
+
 Route::get('/posts/liked/{id}',[PostController::class, 'showLikedPosts'] );
+
+//tags
+Route::post('/tags', [TagController::class, 'store']);
 
