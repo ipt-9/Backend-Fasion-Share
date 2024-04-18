@@ -25,13 +25,15 @@ use App\Http\Controllers\LinkController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::get('/users/{id}',[UserController::class, 'show'] );
+//login/logout
 Route::post('/login',[LoginController::class, 'login'] );
 Route::get('/auth',[LoginController::class,'checkAuth'])->middleware('auth:sanctum');
 Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth:sanctum');
-Route::get('/users',[UserController::class, 'showAll'] );
 
+
+//users
+Route::get('/users/{id}',[UserController::class, 'show'] );
+Route::get('/users',[UserController::class, 'showAll'] );
 Route::post('/users', [UserController::class, 'store']);
 
 //posts

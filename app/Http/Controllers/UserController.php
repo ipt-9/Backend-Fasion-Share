@@ -6,6 +6,7 @@ use App\Http\Resources\UserResource;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use function Laravel\Prompts\error;
 
 class UserController extends Controller
 {
@@ -26,6 +27,9 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8',
         ]);
+
+
+
 
         // Create a new user instance
         $user = new User();
