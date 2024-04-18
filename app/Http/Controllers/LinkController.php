@@ -18,7 +18,7 @@ class LinkController extends Controller
         // Create a new user instance
         $post = new Link();
         $post->Name = $request->input('Name');
-        $post->Link = $request->input('Link');
+        $post->link = $request->input('link');
         $post->updated_at = now();
         $post->created_at = now();
         $post->save();
