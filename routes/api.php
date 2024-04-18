@@ -33,7 +33,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth:sanc
 
 //users
 Route::get('/users/{id}',[UserController::class, 'show'] );
-Route::get('/users',[UserController::class, 'showAll'] );
+Route::get('/getusers',[UserController::class, 'showAll'] );
 Route::post('/users', [UserController::class, 'store']);
 
 //posts
