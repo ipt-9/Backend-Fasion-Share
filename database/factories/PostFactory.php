@@ -22,7 +22,7 @@ class PostFactory extends Factory
 
             'likes' => fake()-> numberBetween(35, 1000000),
             //'image'=> '/postPictures/Glazi.jpg',
-            'image'=> fake()->imageURL(360, 360, 'animals', true, 'cats')
+            'image'=> 'Glazi.jpg'//fake()->imageURL(360, 360, 'animals', true, 'cats')
         ];
     }
 }
