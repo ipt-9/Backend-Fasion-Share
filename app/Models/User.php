@@ -22,7 +22,7 @@ class User extends Authenticatable
         'Email',
         'Description',
         'Picture',
-        'Password'
+        'Password'=> 'hashed'
     ];
 
     /**
