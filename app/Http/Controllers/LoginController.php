@@ -10,13 +10,25 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function login(LoginUserRequest $request)
+   /* public function login(LoginUserRequest $request)
     {
         //return response($request);
         if (Auth::attempt($request->validated())) {
             return ['token' => $request->user()->createToken('auth_token')->plainTextToken];
         }
         return response()->json(['errors' => ['general' => 'E-Mail oder Passwort falsch.']], 422);
+    }*/
+
+    public function login(LoginUserRequest $request)
+    {
+        if (!Auth::attempt($request->only(['email', 'password']))) {
+            return response()->json([
+                'errors' => ['general' => 'E-Mail or Password wrong.']
+            ], 422);
+
+        }
+        return ['token' => $request->user()->createToken('auth_token')->plainTextToken];
+
     }
 
     public function checkauth(Request $request)
