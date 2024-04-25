@@ -12,7 +12,7 @@ class LoginController extends Controller
 {
     public function login(LoginUserRequest $request)
     {
-        return response($request);
+        return response()->$request;
         if (Auth::attempt($request->validated())) {
             return ['token' => $request->user()->createToken('auth_token')->plainTextToken];
         }
