@@ -3,30 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post;
 
 class ImageController extends Controller
 {
-    public function imageUpload(Request $req) {
-        $postObj = new Post;
-        return 'moin';
+    public function imageUpload(Request $request)
+    {
+      //  $request->validate([
+       //     'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Example validation rules
+      //  ]);
 
-        if($req->hasFile('image')) {
-            $filename = $req->file('image')->getClientOriginalName(); // get the file name
-            $getfilenamewitoutext = pathinfo($filename, PATHINFO_FILENAME); // get the file name without extension
-            $getfileExtension = $req->file('image')->getClientOriginalExtension(); // get the file extension
-            $createnewFileName = time().'_'.str_replace(' ','_', $getfilenamewitoutext).'.'.$getfileExtension; // create new random file name
-            $img_path = $req->file('image')->storeAs('public/post_img', $createnewFileName); // get the image path
-            $postObj->image = $createnewFileName; // pass file name with column
+        if ($request->hasFile('image')) {
+
+            $image = $request->file('image');
+
+            $imageName = time().'.'.$image->getClientOriginalExtension();
+
+            $image->storeAs('/public/images', $imageName); // Store the image in the storage/app/public/images directory
+            // You can also store it in other directories as per your requirement
+            //return 'moin';
         }
 
-        if($postObj->save()) { // save file in databse
-            return ['status' => true, 'message' => "Image uploded successfully"];
-        }
-        else {
-            return ['status' => false, 'message' => "Error : Image not uploded successfully"];
-
-        }
-
+        return 'success, Image uploaded successfully.';
     }
 }
+
+
