@@ -34,7 +34,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth:sanc
 
 //users
 Route::get('/users/{id}',[UserController::class, 'show'] );
-Route::get('/search',[UserController::class, 'searchUser'] );
+Route::get('/search', [UserController::class, 'search'])->name('search');
 Route::get('/getUsers',[UserController::class, 'showAll'] );
 Route::post('/users', [UserController::class, 'store']);
 

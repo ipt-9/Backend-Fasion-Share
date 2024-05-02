@@ -19,7 +19,7 @@ class UserController extends Controller
         return ['data' => $user];
     }
 
-    public function searchUser(Request $request)
+    public function search(Request $request)
     {
         $searchTerm = $request->input('search');
 
