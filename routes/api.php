@@ -42,7 +42,7 @@ Route::post('/posts', [PostController::class, 'store']);
 Route::get('/posts/{id}',[PostController::class, 'show']);
 Route::get('/posts',[PostController::class, 'showAll'] );
 Route::get('/posts/user/{id}',[PostController::class, 'showUserPosts'] );
-Route::post('imgupload', [ImageController::class, 'imageUpload']);
+Route::post('posts/imgupload', [ImageController::class, 'imageUpload']);
 
 
 Route::get('/posts/liked/{id}',[PostController::class, 'showLikedPosts'] );
