@@ -23,6 +23,7 @@ class UserController extends Controller
     {
         $searchTerm = $request->input('search');
 
+
         //$users = User::where('name', 'LIKE', "%$searchTerm%")->get();
 
         return $searchTerm;
