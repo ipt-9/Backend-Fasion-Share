@@ -19,11 +19,13 @@ class UserController extends Controller
         return ['data' => $user];
     }
 
-    public function searchUser(Request $request){
+    public function search(Request $request)
+    {
         $searchTerm = $request->input('search');
 
         $users = User::where('name', 'LIKE', "%$searchTerm%")->get();
-        return ['data' => $users];
+
+        return view('search-results', compact('users'));
     }
 
     public function store(Request $request)
