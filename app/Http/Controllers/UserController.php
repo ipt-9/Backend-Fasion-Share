@@ -25,7 +25,9 @@ class UserController extends Controller
 
 
         //$users = User::where('name', 'LIKE', "%$searchTerm%")->get();
-
+        if($searchTerm == null){
+            return 'damn';
+        }
         return $searchTerm;
         $users = User::where('name', 'like', "%$searchTerm%")->get();
 
