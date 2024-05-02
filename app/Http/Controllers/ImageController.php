@@ -9,6 +9,7 @@ class ImageController extends Controller
 {
     public function imageUpload(Request $req) {
         $postObj = new Post;
+        return 'moin';
 
         if($req->hasFile('image')) {
             $filename = $req->file('image')->getClientOriginalName(); // get the file name
