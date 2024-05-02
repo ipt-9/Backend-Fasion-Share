@@ -23,7 +23,9 @@ class UserController extends Controller
     {
         $searchTerm = $request->input('search');
 
-        $users = User::where('name', 'LIKE', "%$searchTerm%")->get();
+        //$users = User::where('name', 'LIKE', "%$searchTerm%")->get();
+
+        $users = Product::where('name', 'like', "%$searchTerm%")->get();
 
         return $users;
     }
