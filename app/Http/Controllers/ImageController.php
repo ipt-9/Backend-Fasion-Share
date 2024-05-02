@@ -20,7 +20,7 @@ class ImageController extends Controller
 
             $imageName = time().'.'.$image->getClientOriginalExtension();
 
-            $image->storeAs('/public/images/postPictures', $imageName); // Store the image in the storage/app/public/images directory
+            $image->storeAs('/public/images', $imageName); // Store the image in the storage/app/public/images directory
             // You can also store it in other directories as per your requirement
             //return 'moin';
 
