@@ -39,14 +39,16 @@ class PostController extends Controller
         $request->validate([
             'user_id' => 'required|int',
             'description' => 'required|string|max:300',
-            'image' => 'required|string',
+            'image' => 'required',
         ]);
+
+        $imageName = (new ImageController())->imageUpload($request);
 
         // Create a new user instance
         $post = new Post();
         $post->user_id = $request->input('user_id');
         $post->description = $request->input('description');
-        $post->image = $request->input('image');
+        $post->image = $imageName;//$request->input('image');
         $post->updated_at = now();
         $post->created_at = now();
         $post->save();
