@@ -25,7 +25,7 @@ class UserController extends Controller
 
         $users = User::where('name', 'LIKE', "%$searchTerm%")->get();
 
-        return view('search-results', compact('users'));
+        return $users;
     }
 
     public function store(Request $request)
