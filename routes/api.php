@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\LinkController;
+use App\http\controllers\ImageController;
 
 
 
@@ -38,9 +39,10 @@ Route::post('/users', [UserController::class, 'store']);
 
 //posts
 Route::post('/posts', [PostController::class, 'store']);
-Route::get('/posts/{id}',[PostController::class, 'show'] );
+Route::get('/posts/{id}',[PostController::class, 'show']);
 Route::get('/posts',[PostController::class, 'showAll'] );
 Route::get('/posts/user/{id}',[PostController::class, 'showUserPosts'] );
+Route::post('imgupload', [ImageController::class, 'imageUpload']);
 
 
 Route::get('/posts/liked/{id}',[PostController::class, 'showLikedPosts'] );

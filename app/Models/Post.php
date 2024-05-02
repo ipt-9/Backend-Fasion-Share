@@ -34,5 +34,10 @@ class Post extends Model
     {
         return $this->belongsToMany(Like_user::class, "Link_post");
     }
+
+
+    protected $fillable = ['image'];
+
+
 }
 
