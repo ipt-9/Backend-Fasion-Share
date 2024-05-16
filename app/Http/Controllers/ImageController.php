@@ -9,7 +9,7 @@ class ImageController extends Controller
     public function imageUpload(Request $request)
     {
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048|dimensions:max_width=750,max_height=750', // Example validation rules
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Example validation rules  |dimensions:max_width=750,max_height=750
             //'image' => 'dimensions:max_width=1000,max_height=500,ratio=2/1',
 
         ]);
