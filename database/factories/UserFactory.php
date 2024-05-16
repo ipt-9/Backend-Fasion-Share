@@ -30,7 +30,7 @@ class UserFactory extends Factory
             'password' => bcrypt('password'),
             //'remember_token' => Str::random(10),
             'description'=>fake()->text(200),
-            'picture' => '/profilePictures/Image.jpeg',
+            'picture' => 'Image.jpeg',
 
 
             //'autoPicture'=> fake()->image(storage_path('/profilePictures'), 300, 300, null, false)
